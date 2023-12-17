@@ -1,0 +1,95 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+}
+
+.App {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+button {
+  margin-right: 5px;
+  font-size: 14px; 
+  padding: 5px 10px; 
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 3px solid black;
+  width: 80%; 
+  max-width: 400px; 
+}
+
+.modal label {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-weight: 700;
+}
+
+.btns-group {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  font-size: 14px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination select {
+  font-size: 14px;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+
+/* Media query for medium screens */
+@media only screen and (max-width: 900px) {
+  table {
+    width: 50%; 
+  }
+
+  button {
+    font-size: 12px; 
+    padding: 3px 8px; 
+  }
+}

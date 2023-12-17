@@ -39,39 +39,6 @@ const Table: React.FC = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  const renderPageNumbers = () => {
-    const pageNumbers = Array.from(
-      { length: Math.ceil(data.length / itemsPerPage) },
-      (_, index) => index + 1
-    );
-
-    return (
-      <select
-        value={currentPage}
-        onChange={(e) => setCurrentPage(Number(e.target.value))}
-      >
-        {pageNumbers.map((pageNumber) => (
-          <option key={pageNumber} value={pageNumber}>
-            {pageNumber}
-          </option>
-        ))}
-      </select>
-    );
-  };
-
-  const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    }
-  };
-
-  const handleNextPage = () => {
-    const totalPages = Math.ceil(data.length / itemsPerPage);
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-
   const handleEdit = (index: number) => {
     const selectedPerson = data[index];
     setSelectedRow(index);
@@ -118,15 +85,8 @@ const Table: React.FC = () => {
     setCurrentPage(page);
   };
 
-//   const handleAdd = () => {
-//     const newData: Person = { name: null, age: 0, city: "", pinCode: null };
-//     setData([...data, newData]);
-//     setSelectedRow(data.length);
-//   };
-
   return (
     <div className="App">
-      {/* <button onClick={handleAdd}>Add</button> */}
       <table>
         <thead>
           <tr>
